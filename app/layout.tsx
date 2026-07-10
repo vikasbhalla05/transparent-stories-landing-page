@@ -11,6 +11,7 @@ import PlaylistSection from "./components/section/PlaylistSection";
 import PriorityTableSection from "./components/section/PriorityTableSection";
 import MarketingOpportunitiesSection from "./components/section/MarketingOpportunitiesSection";
 import MarketingPlanSection from "./components/section/MarketingPlanSection";
+import TeamSection from "./components/section/TeamSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,6 +50,7 @@ export default async function RootLayout({
         <PriorityTableSection data={pageData.priorityTable} />
         <MarketingOpportunitiesSection data={pageData.marketingOpportunities} />
         <MarketingPlanSection data={pageData.marketingPlan} />
+        <TeamSection data={pageData.team}/>
         {children}
       </body>
     </html>

@@ -27,6 +27,7 @@ export async function getPage() {
       },
       priorityTable,
       marketingOpportunities,
-      marketingPlan
+      marketingPlan,
+      team
   }`)
 }
