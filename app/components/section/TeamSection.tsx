@@ -1,12 +1,20 @@
 'use client'
-
 import TeamCarousel from '../ui/TeamCarousel'
+
+type SanityImage = {
+  alt?: string
+
+  asset?: {
+    _ref: string
+    _type: 'reference'
+  }
+}
 
 type Member = {
   name: string
   designation: string
   row: 'row1' | 'row2'
-  image: any
+  image: SanityImage
 }
 
 interface Props {

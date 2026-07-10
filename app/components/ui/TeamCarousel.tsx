@@ -1,11 +1,19 @@
 'use client'
-
 import TeamMember from './TeamMember'
+
+type SanityImage = {
+  alt?: string
+
+  asset?: {
+    _ref: string
+    _type: 'reference'
+  }
+}
 
 interface Member {
   name: string
   designation: string
-  image: any
+  image: SanityImage
 }
 
 interface Props {
