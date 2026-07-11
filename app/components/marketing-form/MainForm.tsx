@@ -1,10 +1,12 @@
 'use client'
+import type { UseFormReturn } from 'react-hook-form'
+import type { MarketingPlanFormData, FormStep } from './types'
 
 import OptionChip from './OptionChip'
 import FormButton from './FormButton'
 
 interface MainFormProps {
-  form: any
+  form: UseFormReturn<MarketingPlanFormData>
 
   step: number
   totalSteps: number
@@ -12,12 +14,14 @@ interface MainFormProps {
   submitted: boolean
   submitError: string
 
-  currentStep: any
+  currentStep: FormStep
 
   handleNext: () => void
   handleBack: () => void
 
-  onSubmit: (data: any) => void
+  onSubmit: (
+    data: MarketingPlanFormData
+  ) => Promise<void>
 
   toggleMultiSelect: (
     field: 'services' | 'goals',
@@ -275,8 +279,8 @@ export default function MainForm({
               md:grid-cols-3
             "
           >
-            {currentStep.options.map(
-              (option: any) => {
+            {currentStep.options?.map(
+              (option) => {
                 const selected =
                   currentStep.field ===
                   'services'
