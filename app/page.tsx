@@ -10,10 +10,14 @@ import PriorityTableSection from './components/section/PriorityTableSection'
 import MarketingOpportunitiesSection from './components/section/MarketingOpportunitiesSection'
 import MarketingPlanSection from './components/section/MarketingPlanSection'
 import TeamSection from './components/section/TeamSection'
+import PerformanceCreativeSection from './components/section/PerformanceCreativeSection'
+import { getFooter } from '@/lib/getFooter'
+import FooterSection from './components/section/FooterSection'
 
 export default async function Home() {
   const pageData = await getPage()
-
+  const footerData = await getFooter()
+  
   return (
     <>
       <Header data={pageData.header} />
@@ -26,6 +30,10 @@ export default async function Home() {
 
       <SatisfactionSection
         data={pageData.satisfaction}
+      />
+      
+      <PerformanceCreativeSection
+        data={pageData.performanceCreative}
       />
 
       <KPIVsTimeSection
@@ -50,6 +58,10 @@ export default async function Home() {
 
       <TeamSection
         data={pageData.team}
+      />
+
+      <FooterSection 
+        data={footerData}
       />
     </>
   )

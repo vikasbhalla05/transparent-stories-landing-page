@@ -49,6 +49,7 @@ export default function TeamSection({
         bg-[#F7F6F3]
         py-24
       "
+      id='team'
     >
       <div className=" max-w-full">
         {/* Heading */}
